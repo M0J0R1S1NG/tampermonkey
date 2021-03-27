@@ -1,6 +1,6 @@
 
 // ==UserScript==
-// @name           AppointmnetTypes2
+// @name           AppointmnetTypeCalc
 // @namespace      oscar
 
 // @include        */provider/providercontrol.jsp?*
