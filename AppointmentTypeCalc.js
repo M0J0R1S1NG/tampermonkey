@@ -36,8 +36,7 @@ function GetStats() {
     var innerht='';
     for (const i of appts1.keys()) {
 
-        //if (appts1[i].childElements("apptStatus")[0].title !== 'undefined'){
-            //var appStatus=appts1[i].getElementsByClassName("apptStatus")[0].title;
+        
             var appStatus=appts1[i].childElements()[0].title
         if (!appts1[i].getElementsByClassName("reason_13")[0]){
                 innerht=appts1[i].getElementsByClassName("reason_18")[0].innerText;
@@ -55,7 +54,7 @@ function GetStats() {
                 //alert('Medicals=' + Medicals + ' Surgicals=' + Surgicals + ' IUDs=' + IUDs + ' FOLLOW-UP=' + followup + ' ASSESSMENT=' + assessment + ' CounsellingP=' + counselling + ' STI=' + STI + "     " + innerht);
                 other=Medicals+Surgicals+IUDs+followup+counselling+assessment+STI;
             }
-        //}
+      
 
 }
     ApptCounts.innerText = 'Total=' + other + ' Medicals=' + Medicals + ' Surgicals=' + Surgicals + ' IUDs=' + IUDs + ' Followup=' + followup+ ' Counselling=' + counselling+ ' Assessment=' + assessment+ ' STI=' + STI;
