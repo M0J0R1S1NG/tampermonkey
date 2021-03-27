@@ -7,8 +7,8 @@
 // @include        *provider/appointmentprovideradminday.jsp*
 // @version     0.4
 // @grant       unsafeWindow
-// @downloadURL https://https://github.com/M0J0R1S1NG/tampermonkey/AppointmentTypeCalc.js
-// @updateURL https://https://github.com/M0J0R1S1NG/tampermonkey/AppointmentTypeCalc.js
+// @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
+// @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
 // ==/UserScript==
 
 
