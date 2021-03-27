@@ -5,7 +5,7 @@
 
 // @include        */provider/providercontrol.jsp?*
 // @include        *provider/appointmentprovideradminday.jsp*
-// @version     0.4
+// @version     0.5
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
 // @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
@@ -96,13 +96,10 @@ function dragElement(elmnt) {
   }
 }
 
-//var t = setInterval(GetStats(), 15000);
 if(!unsafeWindow.dragElement)
 {
     unsafeWindow.dragElement = dragElement;
 }
-
-
 if(!unsafeWindow.GetStats)
 {
     unsafeWindow.GetStats = GetStats;
@@ -114,13 +111,5 @@ if(!unsafeWindow.appts1)
 
 dragElement(ApptCounts);
 window.onload = function() { setInterval(GetStats(),10000)};
-
-
-
-
-
-
-
-
 
 
