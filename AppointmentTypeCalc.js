@@ -5,7 +5,7 @@
 
 // @include        */provider/providercontrol.jsp?*
 // @include        *provider/appointmentprovideradminday.jsp*
-// @version     0.5
+// @version     0.6
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
 // @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
@@ -110,6 +110,6 @@ if(!unsafeWindow.appts1)
 }
 
 dragElement(ApptCounts);
-window.onload = function() { setInterval(GetStats(),10000)};
+setInterval(GetStats(),10000);
 
 
