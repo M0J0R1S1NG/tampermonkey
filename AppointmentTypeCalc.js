@@ -6,7 +6,7 @@
 // @include *provider/appointmentprovideradminday.jsp?*
 // @include *provider/providercontrol.jsp?*
 
-// @version     0.6
+// @version     0.66
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
 // @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
