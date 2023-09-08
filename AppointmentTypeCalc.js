@@ -1,10 +1,12 @@
-
 // ==UserScript==
 // @name           AppointmnetTypeCalc
+// @description    Appointment types calulator
 // @namespace      oscar
 
-// @include        */provider/providercontrol.jsp?*
-// @include        *provider/appointmentprovideradminday.jsp*
+// @include *provider/appointmentprovideradminday.jsp?*
+// @include *provider/providercontrol.jsp?*
+
+
 // @version     0.6
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
@@ -36,25 +38,38 @@ function GetStats() {
     var innerht='';
     for (const i of appts1.keys()) {
 
-        
+
             var appStatus=appts1[i].childElements()[0].title
+
+
         if (!appts1[i].getElementsByClassName("reason_13")[0]){
-                innerht=appts1[i].getElementsByClassName("reason_18")[0].innerText;
+            if (!appts1[i].getElementsByClassName("reason_18")[0]){
+                 if (!appts1[i].getElementsByClassName("reason_21")[0]){
+                     innerht=appts1[i].getElementsByClassName("reason_43")[0].innerText;
+                 }else{
+                     innerht=appts1[i].getElementsByClassName("reason_21")[0].innerText;
+                 }
             }else{
-                 innerht=appts1[i].getElementsByClassName("reason_13")[0].innerText;
+                innerht=appts1[i].getElementsByClassName("reason_18")[0].innerText;
+
             }
-            if (!appStatus.includes('NO SHOW') && !appStatus.includes('Cancelled') && !appStatus.includes('Rebooked')){
-                if (innerht.includes('IUD') && innerht.includes('12 weeks')==0 && innerht.includes('D&C')==0 && innerht.includes('TA')==0 && innerht.includes('MEDICAL')==0 && innerht.includes('Follow')==0){IUDs+=1;}
-                if (innerht.includes('12-14') || innerht.includes('12 weeks') || innerht.includes('Lami - Day 2') || innerht.includes('D&C' ) || innerht.includes('TA' ) && innerht.includes('Follow')==0) {Surgicals+=1;}
-                if ((innerht.includes('MEDICAL') || innerht.includes('MA')) && innerht.includes('Follow')==0 && innerht.includes('D&C')==0 && innerht.includes('Assessment')==0 ){Medicals+=1;}
-                if (innerht.includes('Follow-up')) {followup+=1;}
+
+        }else {
+            innerht=appts1[i].getElementsByClassName("reason_13")[0].innerText;
+        }
+            if (!appStatus.includes('NO SHOW') && !appStatus.includes('Cancelled') && !appStatus.includes('Rebooked') && !innerht.includes(':DR ')){
+                if (innerht.includes('IUD') && innerht.includes('12 weeks')==0 && innerht.includes('D&C')==0 && innerht.includes('TA ')==0 && innerht.includes('MEDICAL')==0 && innerht.includes('Follow')==0){IUDs+=1;}
+                if (innerht.includes('12-14') || innerht.includes('12 weeks') || innerht.includes('Lami - Day 2') || innerht.includes('D&C' ) || innerht.includes('TA ' ) && (innerht.includes('CU ')==0 && innerht.includes('BETA')==0 && innerht.includes('CHUP')==0 && innerht.includes('CHECK UP')==0 && innerht.includes('Follow')==0 && innerht.includes('CU')==0)) {Surgicals+=1;}
+                if ((innerht.includes('MEDICAL') || innerht.includes('MA ')) && innerht.includes('CHECK UP')==0 && innerht.includes('CU ')==0 && innerht.includes('Follow')==0 && innerht.includes('BETA')==0 && innerht.includes('CHUP')==0 && innerht.includes('D&C')==0 && innerht.includes('Assessment')==0 ){Medicals+=1;}
+                if (innerht.includes('Follow-up') || innerht.includes('CU ') || innerht.includes('CHECK UP') || innerht.includes('CHUP') || innerht.includes('BETA') ) {followup+=1;}
                 if (innerht.includes('Assessment')) {assessment+=1;}
                 if (innerht.includes('Counselling')) {counselling+=1;}
                 if (innerht.includes('STI') ){STI +=1;}
                 //alert('Medicals=' + Medicals + ' Surgicals=' + Surgicals + ' IUDs=' + IUDs + ' FOLLOW-UP=' + followup + ' ASSESSMENT=' + assessment + ' CounsellingP=' + counselling + ' STI=' + STI + "     " + innerht);
                 other=Medicals+Surgicals+IUDs+followup+counselling+assessment+STI;
+
             }
-      
+
 
 }
     ApptCounts.innerText = 'Total=' + other + ' Medicals=' + Medicals + ' Surgicals=' + Surgicals + ' IUDs=' + IUDs + ' Followup=' + followup+ ' Counselling=' + counselling+ ' Assessment=' + assessment+ ' STI=' + STI;
