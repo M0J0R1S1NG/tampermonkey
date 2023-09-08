@@ -3,9 +3,9 @@
 // @description    Appointment types calulator
 // @namespace      oscar
 
+
 // @include *provider/appointmentprovideradminday.jsp?*
 // @include *provider/providercontrol.jsp?*
-
 
 // @version     0.6
 // @grant       unsafeWindow
@@ -43,14 +43,14 @@ function GetStats() {
 
 
         if (!appts1[i].getElementsByClassName("reason_13")[0]){
-            if (!appts1[i].getElementsByClassName("reason_18")[0]){
+            if (!appts1[i].getElementsByClassName("reason_37")[0]){
                  if (!appts1[i].getElementsByClassName("reason_21")[0]){
                      innerht=appts1[i].getElementsByClassName("reason_43")[0].innerText;
                  }else{
                      innerht=appts1[i].getElementsByClassName("reason_21")[0].innerText;
                  }
             }else{
-                innerht=appts1[i].getElementsByClassName("reason_18")[0].innerText;
+                innerht=appts1[i].getElementsByClassName("reason_37")[0].innerText;
 
             }
 
