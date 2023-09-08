@@ -6,7 +6,7 @@
 // @include *provider/appointmentprovideradminday.jsp?*
 // @include *provider/providercontrol.jsp?*
 
-// @version     0.9
+// @version     1.0
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
 // @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.js
@@ -60,7 +60,7 @@ function GetStats() {
                 if (innerht.includes('IUD') && innerht.includes('12 weeks')==0 && innerht.includes('D&C')==0 && innerht.includes('TA ')==0 && innerht.includes('MEDICAL')==0 && innerht.includes('Follow')==0){IUDs+=1;}
                 if (innerht.includes('12-14') || innerht.includes('12 weeks') || innerht.includes('Lami - Day 2') || innerht.includes('D&C' ) || innerht.includes('TA ' ) && (innerht.includes('CU ')==0 && innerht.includes('BETA')==0 && innerht.includes('CHUP')==0 && innerht.includes('CHECK UP')==0 && innerht.includes('Follow')==0 && innerht.includes('CU')==0)) {Surgicals+=1;}
                 if ((innerht.includes('MEDICAL') || innerht.includes('MA ')) && innerht.includes('CHECK UP')==0 && innerht.includes('CU ')==0 && innerht.includes('Follow')==0 && innerht.includes('BETA')==0 && innerht.includes('CHUP')==0 && innerht.includes('D&C')==0 && innerht.includes('Assessment')==0 ){Medicals+=1;}
-                if (innerht.includes('Follow-up') || innerht.includes('CU ') || innerht.includes('CHECK UP') || innerht.includes('CHUP') || innerht.includes('BETA') ) {followup+=1;}
+                if (innerht.includes('Follow-up') || innerht.includes('CU ') || innerht.includes('CHECK UP') || innerht.includes('CHUP') || innerht.includes('BETA') || innerht.includes('LI') ) {followup+=1;}
                 if (innerht.includes('Assessment')) {assessment+=1;}
                 if (innerht.includes('Counselling')) {counselling+=1;}
                 if (innerht.includes('STI') ){STI +=1;}
