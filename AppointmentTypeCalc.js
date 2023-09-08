@@ -3,7 +3,6 @@
 // @description    Appointment types calulator
 // @namespace      oscar
 
-
 // @include *provider/appointmentprovideradminday.jsp?*
 // @include *provider/providercontrol.jsp?*
 
