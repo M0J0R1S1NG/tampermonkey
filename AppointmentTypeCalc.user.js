@@ -38,7 +38,7 @@ function GetStats() {
     for (const i of appts1.keys()) {
 
 
-            var appStatus=appts1[i].childElements()[0].title
+            var appStatus=appts1[i].children[0].title
 
 
         if (!appts1[i].getElementsByClassName("reason_13")[0]){
