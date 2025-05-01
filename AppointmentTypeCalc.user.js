@@ -40,6 +40,7 @@ function GetStats() {
 
             var appStatus=appts1[i].children[0].title
 
+if (!appts1[i].getElementsByClassName("reason_37")[0]){  
 
         if (!appts1[i].getElementsByClassName("reason_13")[0]){
             if (!appts1[i].getElementsByClassName("reason_18")[0]){
@@ -56,6 +57,8 @@ function GetStats() {
         }else {
             innerht=appts1[i].getElementsByClassName("reason_13")[0].innerText;
         }
+
+}
             if (!appStatus.includes('No Show') && !appStatus.includes('Cancelled') && !appStatus.includes('Rebooked') && !innerht.includes('Team:') && !innerht.includes(':DR ') && !innerht.includes(':DR.')){
                 if (innerht.includes('IUD') && innerht.includes('12 weeks')==0 && innerht.includes('D&C')==0 && innerht.includes('TA')==0 && innerht.includes('MEDICAL')==0
                     && innerht.includes('Follow')==0){IUDs+=1;}
