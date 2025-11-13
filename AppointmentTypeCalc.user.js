@@ -6,14 +6,14 @@
 // @include *provider/appointmentprovideradminday.jsp?*
 // @include *provider/providercontrol.jsp?*
 
-// @version     1.7
+// @version     2.0
 // @grant       unsafeWindow
 // @downloadURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.user.js
 // @updateURL https://raw.githubusercontent.com/M0J0R1S1NG/tampermonkey/main/AppointmentTypeCalc.user.js
 // ==/UserScript==
 
 
-    var appts1 = document.querySelectorAll(".appt");
+var appts1 = document.querySelectorAll(".appt");
 var navlist = document.getElementsByClassName("header-div")[0];
 var ApptCounts = document.createElement("DIV");
 ApptCounts.style.position="absolute";
